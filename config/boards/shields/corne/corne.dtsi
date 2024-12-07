@@ -3,12 +3,12 @@
 /{
     chosen{
         zmk,kscan = &kscan0;
-        zmk, matrix_transform = &default_transform;
+        zmk,matrix_transform = &default_transform;
     };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        colums = <12>;
+        columms = <12>;
         rows = <4>;
 
 //       | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |   | SW6  | SW5  | SW4  | SW3  | SW2  | SW1  |
