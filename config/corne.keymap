@@ -33,14 +33,14 @@
             key-positions = <30 31>;
         };
 
-        mouseMovementLayer {
-            bindings = <&tog 3>;
-            key-positions = <5 6>;
-        };
-
         bootLoaderMode {
             bindings = <&bootloader>;
             key-positions = <38 39 11 0>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <38 39>;
         };
     };
 
@@ -50,29 +50,29 @@
         default_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  "   |
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | EQU  |
-            //                    | GUI | ALT | ENT |   | SPC | LY1  | LY2 |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E     &kp R         &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LSHIFT  &kp A  &kp S  &kp D     &kp F         &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp DOUBLE_QUOTES
-&kp LCTRL   &kp Z  &kp X  &kp C     &kp V         &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
-                          &kp LGUI  &kp LEFT_ALT  &kp ENTER    &kp SPACE  &mo 1  &mo 2
+&kp TAB     &kp Q  &kp W  &kp E     &kp R         &kp T        &kp Y   &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LSHIFT  &kp A  &kp S  &kp D     &kp F         &kp G        &kp H   &kp J  &kp K      &kp L    &kp SEMI  &kp DOUBLE_QUOTES
+&kp LCTRL   &kp Z  &kp X  &kp C     &kp V         &kp B        &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
+                          &kp LGUI  &kp LEFT_ALT  &kp SPACE    &tog 3  &mo 1  &mo 2
             >;
         };
 
         symbols {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  &  |  %  |   |  ^  |  $  |  *  |  (  |  )  | BSPC |
-            // | SHFT |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | CtRL |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
 &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp AMPERSAND  &kp PRCNT    &kp CARET  &kp DOLLAR  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LSHFT  &trans    &trans  &trans    &trans         &trans       &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LCTRL  &trans    &trans  &trans    &trans         &trans       &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+&kp LCTRL  &trans    &trans  &trans    &trans         &trans       &kp MINUS  &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans    &trans         &trans       &kp UNDER  &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans         &kp SPACE    &kp RET    &trans      &kp RALT
             >;
         };
@@ -93,12 +93,6 @@
         };
 
         MouseMovement {
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |SCRUP|     |     |   |     |LCLK |MMUP |RCLK |     |      |
-            // |      |     |     |SCRDN|     |     |   |     | MML |MMDWN| MMR |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    |     |     |     |   |     |     |     |
-
             bindings = <
 &trans  &trans  &trans  &msc SCRL_UP    &trans  &trans    &trans  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans  &trans
 &trans  &trans  &trans  &msc SCRL_DOWN  &trans  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
@@ -108,11 +102,3 @@
         };
     };
 };
-
-
-        //For new Layers
-            // -----------------------------------------------------------------------------------------
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    |     |     |     |   |     |     |     |
