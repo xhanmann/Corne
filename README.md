@@ -19,10 +19,10 @@ A DIY wireless split keyboard based on the Corne layout, built for approximately
 | Mechanical Switches | 50 | 7.47 | [AliExpress](https://a.aliexpress.com/_EGhMxEC) |
 | Keycaps | Set | 3.79 | [Option 1](https://a.aliexpress.com/_EzQyNtA) / [Option 2](https://a.aliexpress.com/_EH8mNqs) |
 | Diodes (1N4148) | 100 | 0.85 | [AliExpress](https://a.aliexpress.com/_EwZoG2G) |
-| Slide Switches | 2 | 0.21 | |
+| Slide Switches | 2 | 0.11 | |
 | 3D Printed Parts | Set | 1.80 | Files provided |
 
-**Total Cost**: $25.14 (excluding wires and screws)
+**Total Cost**: $25.04 (excluding wires and screws)
 
 ## Current Keymap
 
