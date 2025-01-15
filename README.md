@@ -43,19 +43,18 @@ A DIY wireless split keyboard based on the Corne layout, built for approximately
 2. Note: You may need to adjust the:
    - Battery compartment size
    - Slide switch holes
-   - Screw support thickness
 
 ### Wiring
 1. Wire switches in a matrix configuration
 2. Connect diodes:
    - Direction matters (black line indicates cathode)
-   - Use diode legs for rows
+   - Use diode legs for the rows
    - Use separate wires for columns
 3. Keep wiring clear of screw holes
 4. Connect the battery:
    - GND to GND pin
-   - Positive to slide switch
-   - Middle pin of switch to RAW
+   - Positive to one of the side legs on the slide switch
+   - Middle pin of the slide switch to the RAW pin
 
 ### Pin Connections for Rows and Columns
 The matrix configuration uses GPIO pins on the nRF52840 Pro Micro clone. Below are the connections:
@@ -86,10 +85,10 @@ To flash the firmware:
 2. Board will appear as mass storage device
 3. Flash the appropriate firmware file
 
-If you need to reconnect to a different device:
+If you forgot the keyboard from your device and can't reconnect:
 1. Flash the `settings_reset-nice_nano_v2-zmk.uf2` file
 2. Reflash the regular firmware
-3. Pair with new device
+3. Pair
 
 ## Repository Structure
 ```
