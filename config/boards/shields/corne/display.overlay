@@ -3,7 +3,7 @@
         compatible = "nordic,nrf-twim";
         status = "okay";
         sda-pin = <3>; /* Adjust to your SDA pin */
-        scl-pin = <4>; /* Adjust to your SCL pin */
+        scl-pin = <9>; /* Adjust to your SCL pin */
         clock-frequency = <I2C_BITRATE_FAST>;
         
         ssd1306: ssd1306@3c {
