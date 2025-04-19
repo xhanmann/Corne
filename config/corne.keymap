@@ -6,6 +6,10 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <zmk/display.h>
+#include <zmk/event_manager.h>
+#include <zmk/events/layer_state_changed.h>
+
 
 / {
     combos {
@@ -59,6 +63,16 @@
         Enter {
             bindings = <&kp ENTER>;
             key-positions = <38 39>;
+
+        void render_status(struct zmk_display *disp) {
+            zmk_display_clear(disp);
+            zmk_display_print(disp, "Layer: ");
+            zmk_display_print(disp, zmk_layer_active());
+            zmk_display_update(disp);
+        }
+            ZMK_DISPLAY_WIDGET(
+                    render_status,
+                    render_status);
         };
     };
 
