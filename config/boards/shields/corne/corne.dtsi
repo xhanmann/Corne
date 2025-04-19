@@ -32,20 +32,5 @@
                     <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    };    
-    display0: display {
-        compatible = "ssd1306";
-        i2c = <&i2c1>;
-        width = <128>;
-        height = <64>;
-        label = "OLED Display";
-    };
-
-    i2c1: i2c {
-        compatible = "nordic,nrf-twim";
-        sda-pin = <3>;  // SDA pin
-        scl-pin = <9>;  // SCL pin
-        status = "okay";
-    };
-
+    };   
 };    
