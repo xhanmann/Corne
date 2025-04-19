@@ -6,10 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <zmk/display.h>
-#include <zmk/event_manager.h>
-#include <zmk/events/layer_state_changed.h>
-
 
 / {
     combos {
