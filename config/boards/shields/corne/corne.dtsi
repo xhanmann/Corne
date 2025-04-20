@@ -9,11 +9,11 @@
 #include <layouts/foostan/corne/5column.dtsi>
 #include <layouts/foostan/corne/6column.dtsi>
 
-rgb_underglow {
+&rgb_underglow {
     compatible = "zmk,rgb-underglow";
     label = "WS2812B LEDs";
-    chain-length = <42>; /* Number of LEDs for 42 keys */
-    pin = <&gpio0 00 GPIO_ACTIVE_HIGH>; /* GPIO pin connected to the LED data line */
+    chain-length = <42>;
+    pin = <&gpio0 00 GPIO_ACTIVE_HIGH>;
 };
 
 &foostan_corne_6col_layout {
