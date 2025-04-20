@@ -70,8 +70,12 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
 
     };
 
-    // TODO: per-key RGB node(s)?
-};
+     rgb_underglow {
+            compatible = "zmk,rgb-underglow";
+            label = "WS2812B LEDs";
+            chain-length = <42>; /* Number of LEDs for 42 keys */
+            pin = <&gpio0 10 GPIO_ACTIVE_HIGH>; /* GPIO pin connected to the LED data line */
+        };
 
 &pro_micro_i2c {
     status = "okay";
@@ -90,5 +94,6 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+       };
     };
 };
