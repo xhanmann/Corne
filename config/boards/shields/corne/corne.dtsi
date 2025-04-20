@@ -13,7 +13,7 @@
     compatible = "zmk,rgb-underglow";
     label = "WS2812B LEDs";
     chain-length = <42>;
-    pin = <&gpio0 00 GPIO_ACTIVE_HIGH>;
+    pin = <&gpio0 0 GPIO_ACTIVE_HIGH>;
 };
 
 &foostan_corne_6col_layout {
