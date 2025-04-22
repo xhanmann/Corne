@@ -34,7 +34,6 @@ config ZMK_BACKLIGHT_BRT_START
 config ZMK_BACKLIGHT_ON_START
     default y
 
-endif # ZMK_BACKLIGHT
 config PWM
     default y
 
