@@ -23,8 +23,6 @@ config SSD1306
 
 endif
 
-
-# Backlight
 if ZMK_BACKLIGHT
 
 config ZMK_BACKLIGHT_BRT_STEP
