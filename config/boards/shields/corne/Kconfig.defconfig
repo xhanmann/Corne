@@ -23,8 +23,20 @@ config SSD1306
 
 endif
 
+
+# Backlight
 if ZMK_BACKLIGHT
 
+config ZMK_BACKLIGHT_BRT_STEP
+    default 20
+
+config ZMK_BACKLIGHT_BRT_START
+    default 40
+
+config ZMK_BACKLIGHT_ON_START
+    default y
+
+endif # ZMK_BACKLIGHT
 config PWM
     default y
 
