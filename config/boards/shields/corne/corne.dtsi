@@ -94,17 +94,27 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
     };
 };    
 
-&pinctrl {
-    // Other pinctrl definitions for other hardware
-    pwm0_default: pwm0_default {
-        group1 {
-            psels = <NRF_PSEL(PWM_OUT0, 1, 13)>;
-        };
-    };
-    pwm0_sleep: pwm0_sleep {
-        group1 {
-            psels = <NRF_PSEL(PWM_OUT0, 1, 13)>;
-            low-power-enable;
-        };
+&spi1 {
+    status = "okay";
+    cs-gpios = <&gpio0 25 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-names = "default";
+    clock-frequency = <DT_FREQ_M(2)>;
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <45>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
     };
 };
+
