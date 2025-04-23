@@ -94,19 +94,50 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
     };
 };    
 
-    &rgb_underglow {
-        compatible = "zmk,rgb-underglow";
-        label = "RGB_UNDERGLOW";
+   #include <dt-bindings/led/led.h>
 
-        // Specify the GPIO pin connected to the data line of the RGB strip
-        data-gpios = <&gpio0 5 GPIO_OUTPUT>; // Replace `gpio0` and `5` with the correct GPIO controller and pin for your board
-
-        // Set the number of LEDs in the RGB strip
-        chain-length = <42>; // Number of LEDs
-
-        // Specify the type of LED strip (e.g., WS2812, SK6812)
-        led-strip-type = "ws2812";
-
-        // Set the maximum brightness (0-255)
-        max-brightness = <128>; // Adjust brightness to your preference
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+        };
     };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <42>; /* number of LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
+   
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};    
