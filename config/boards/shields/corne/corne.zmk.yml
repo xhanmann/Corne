@@ -17,3 +17,12 @@ properties:
   contrast:
     type: int
     description: Contrast level of the display.
+    
+properties:
+  address-mode:
+    type: string
+    enum:
+      - horizontal
+      - vertical
+      - page
+    description: Addressing mode for the display.
