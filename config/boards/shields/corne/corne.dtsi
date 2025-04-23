@@ -110,7 +110,6 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
         height = <64>; /* Height of the display in pixels */
         segment-offset = <0>;
         page-offset = <0>;
-        contrast = <0x7F>;
         vcomh-level = <0x20>;
         address-mode = "horizontal";
         display-offset = <0>;
