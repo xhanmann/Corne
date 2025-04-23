@@ -13,3 +13,7 @@ features:
 siblings:
   - corne_left
   - corne_right
+properties:
+  contrast:
+    type: int
+    description: Contrast level of the display.
