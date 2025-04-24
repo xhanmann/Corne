@@ -20,7 +20,6 @@
 
 / {
     chosen {
-        zmk,backlight = &backlight;
         zmk,underglow = &led_strip;
         zephyr,display = &oled_display;
         zmk,display = &oled_display;
