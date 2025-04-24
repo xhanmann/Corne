@@ -45,9 +45,6 @@ config LED_PWM
 endif # ZMK_BACKLIGHT
 if ZMK_RGB_UNDERGLOW
 
-config ZMK_RGB_UNDERGLOW
-    default y
-
 config ZMK_RGB_UNDERGLOW_NUM
     default 10
 
