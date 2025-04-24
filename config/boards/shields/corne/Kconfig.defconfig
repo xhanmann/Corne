@@ -5,12 +5,14 @@ config ZMK_KEYBOARD_NAME
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
+
 endif
 
 if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 
 config ZMK_SPLIT
     default y
+
 endif
 
 if ZMK_DISPLAY
@@ -42,26 +44,33 @@ config LED_PWM
 
 endif # ZMK_BACKLIGHT
 
-# Enable RGB Underglow
-CONFIG_ZMK_RGB_UNDERGLOW=y
+if ZMK_RGB_UNDERGLOW
 
-# Set the number of RGB LEDs in your keyboard
-CONFIG_ZMK_RGB_UNDERGLOW_NUM=10
+config ZMK_RGB_UNDERGLOW
+    default y
 
-# Enable advanced effects (e.g., breathing, rainbow, etc.)
-CONFIG_ZMK_RGB_UNDERGLOW_EFFECT_BREATHING=y
-CONFIG_ZMK_RGB_UNDERGLOW_EFFECT_RAINBOW=y
+config ZMK_RGB_UNDERGLOW_NUM
+    default 10
 
-# Set the default brightness level (0-255)
-CONFIG_ZMK_RGB_UNDERGLOW_BRIGHTNESS=128
+config ZMK_RGB_UNDERGLOW_EFFECT_BREATHING
+    default y
 
-# Set the default effect mode (e.g., "rainbow" or "solid")
-CONFIG_ZMK_RGB_UNDERGLOW_DEFAULT_EFFECT="rainbow"
+config ZMK_RGB_UNDERGLOW_EFFECT_RAINBOW
+    default y
 
-# Enable the ability to adjust RGB settings via keycodes
-CONFIG_ZMK_RGB_UNDERGLOW_KEYPRESS=y
+config ZMK_RGB_UNDERGLOW_BRIGHTNESS
+    default 128
 
-CONFIG_WS2812_STRIP=y
-CONFIG_WS2812_PIN=0
+config ZMK_RGB_UNDERGLOW_DEFAULT_EFFECT
+    default "rainbow"
+
+config ZMK_RGB_UNDERGLOW_KEYPRESS
+    default y
+
+config WS2812_STRIP
+    default y
+
+config WS2812_PIN
+    default 0
 
 endif
