@@ -1,4 +1,4 @@
-file_format: "1"
+file_format: 1
 id: corne
 name: Corne
 type: shield
@@ -17,9 +17,7 @@ properties:
   contrast:
     type: int
     description: Contrast level of the display.
-    
-properties:
-  address-mode:
+  "address-mode":
     type: string
     enum:
       - horizontal
