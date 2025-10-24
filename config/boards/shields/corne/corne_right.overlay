@@ -21,7 +21,7 @@
         reg = <0x3C>;
         label = "SSD1306";
         width = <128>;
-        height = <32>;
+        height = <64>;
         segment-offset = <0>;
         page-offset = <0>;
         reset-gpios = <&gpio0 16 (GPIO_ACTIVE_LOW)>;  // flags must be in parentheses
