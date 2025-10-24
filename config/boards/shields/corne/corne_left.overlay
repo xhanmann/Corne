@@ -18,7 +18,6 @@
         page-offset = <0>;
         reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;  // Only if you use a reset pin
     };
-};
 
 &display {
     status = "okay";
