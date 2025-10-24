@@ -50,8 +50,6 @@ config ZMK_RGB_UNDERGLOW_KEYPRESS
     bool "Enable RGB underglow activation on keypress"
     default y
 
-config WS2812_PIN
-    int "Pin number for WS2812 LED control"
-    default 0
+
 
 endif
