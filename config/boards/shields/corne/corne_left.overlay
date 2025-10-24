@@ -1,17 +1,18 @@
 #include "corne.dtsi"
 
 &kscan0 {
-    col-gpios = <&pro_micro 6 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 7 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 9 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 8 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 16 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 14 GPIO_ACTIVE_HIGH>;
+    col-gpios = <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
 &i2c0 {
     status = "okay";
-    ssd1306@3c {
+    /* add a node label so &ssd1306 references work */
+    ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306";
         reg = <0x3C>;
         label = "SSD1306";
@@ -19,7 +20,7 @@
         height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
-        reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;  // Only if you use a reset pin
+        reset-gpios = <&gpio0 16 (GPIO_ACTIVE_LOW)>;  // flags must be in parentheses
         status = "okay";
     };
 };
