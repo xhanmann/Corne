@@ -7,7 +7,10 @@
                 <&pro_micro 8 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 16 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 14 GPIO_ACTIVE_HIGH>;
+};
+
 &i2c1 {
+    status = "okay";
     ssd1306@3c {
         compatible = "solomon,ssd1306";
         reg = <0x3C>;
@@ -17,10 +20,6 @@
         segment-offset = <0>;
         page-offset = <0>;
         reset-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;  // Only if you use a reset pin
+        status = "okay";
     };
-
-&display {
-    status = "okay";
-    compatible = "solomon,ssd1306";
-    label = "SSD1306";
 };
