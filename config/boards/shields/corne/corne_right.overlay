@@ -1,7 +1,7 @@
 #include "corne.dtsi"
 
 &default_transform {
-    col-offset = <6>;  
+    col-offset = <6>;
 };
 
 &kscan0 {
@@ -11,6 +11,7 @@
                 <&pro_micro 8 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 16 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 14 GPIO_ACTIVE_HIGH>;
+};
 
 &i2c0 {
     status = "okay";
