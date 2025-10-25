@@ -121,7 +121,7 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
     pinctrl-names = "default", "sleep";
 
     oled_display: oled@3c {
-        compatible = "solomon,ssd1306fb"; /* Change to "sh1106" if using SH1106 */
+        compatible = "solomon,ssd1306"; /* Change to "sh1106" if using SH1106 */
         reg = <0x3C>; /* I2C address of the OLED display */
 
         /* Display properties */
