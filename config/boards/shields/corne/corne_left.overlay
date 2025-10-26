@@ -12,6 +12,4 @@
 &i2c0 {
     status = "okay";
     /* add a node label so &ssd1306 references work */
-   
-    };
 };
