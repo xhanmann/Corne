@@ -20,7 +20,6 @@
         height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
-        reset-gpios = <&gpio0 16 (GPIO_ACTIVE_LOW)>;  // flags must be in parentheses
         status = "okay";
     };
 };
