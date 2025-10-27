@@ -14,7 +14,7 @@
     /* add a node label so &ssd1306 references work */
     ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306";
-        reg = <0x3D>;
+        reg = <0x3C>;
         label = "SSD1306";
         width = <128>;
         height = <32>;
