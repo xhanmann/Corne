@@ -21,9 +21,8 @@
 / {
     chosen {
         zmk,underglow = &led_strip;
-        zephyr,display = &oled_display;
         zephyr,display = &ssd1306;
-        zmk,display = &oled_display;
+        zmk,display = &ssd1306;
         zmk,kscan = &kscan0;
         zmk,physical-layout = &foostan_corne_6col_layout;
     };
@@ -66,15 +65,11 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
 
         diode-direction = "col2row";
         row-gpios
-            = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
-
+            = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
-
-
 };
 
 &pinctrl {
@@ -120,9 +115,12 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
 
-    oled_display: oled@3c {
+    /* SSD1306 OLED node (labelled &ssd1306 so chosen can reference it) */
+    ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306"; /* Change to "sh1106" if using SH1106 */
         reg = <0x3C>; /* I2C address of the OLED display */
+
+        status = "okay";
 
         /* Display properties */
         width = <128>; /* Width of the display in pixels */
@@ -131,11 +129,9 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <32>;
-        prechargep = <0x22>; 
+        prechargep = <0x22>;
     };
 };
-
- #include <dt-bindings/led/led.h>
 
 &spi3 {
     compatible = "nordic,nrf-spim";
@@ -159,30 +155,5 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
         color-mapping = <LED_COLOR_ID_GREEN
                          LED_COLOR_ID_RED
                          LED_COLOR_ID_BLUE>;
-    };
-};
-   
-& i2c0 {
-    /*
-     * SSD1306 OLED node (labelled &ssd1306 so chosen can reference it)
-     * Place this in the same DTSI that defines &i2c0 (for example add into
-     * config/boards/shields/corne/corne.dtsi or include this file from there).
-     */
-    ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306"; /* Change to "sh1106" if you have an SH1106 */
-        reg = <0x3C>; /* I2C address */
-
-        status = "okay";
-
-        /* Display geometry */
-        width = <128>;
-        height = <32>;
-
-        /* Optional display tuning (match existing oled_display settings) */
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <32>;
-        prechargep = <0x22>;
     };
 };
