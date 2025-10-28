@@ -75,14 +75,14 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>, /* */
-                    <NRF_PSEL(TWIM_SCL, 0, 3)>; /*  */
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>, /* */
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>; /*  */
         };
     };
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 3)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
             low-power-enable;
             /* Leave I2C lines pulled up in sleep so they do not fight the bus.
              * I2C requires pull-ups; use bias-pull-up here so the pins idle safely.
@@ -92,12 +92,12 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
     };
     spi3_default: spi3_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
         };
     };
     spi3_sleep: spi3_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
             low-power-enable;
             /* Pull MOSI down in sleep so the WS2812 data line is not left floating
              * and won't emit spurious data while the MCU is asleep.
