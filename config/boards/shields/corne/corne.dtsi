@@ -75,14 +75,14 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>, /* */
-                    <NRF_PSEL(TWIM_SCL, 0, 20)>; /*  */
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>, /* */
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>; /*  */
         };
     };
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>;
             low-power-enable;
             /* Leave I2C lines pulled up in sleep so they do not fight the bus.
              * I2C requires pull-ups; use bias-pull-up here so the pins idle safely.
