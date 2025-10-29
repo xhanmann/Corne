@@ -63,18 +63,18 @@ The matrix configuration uses GPIO pins on the nRF52840 Pro Micro clone. Below a
 ![pinout](https://github.com/user-attachments/assets/ae1bf9eb-8071-4a8f-8cac-c95a39f61f9e)
 
 #### Rows (Connected to `row-gpios`):
-- Row 0: Pin 21
-- Row 1: Pin 20
-- Row 2: Pin 19
-- Row 3: Pin 18
+- Row 0: Pin 20
+- Row 1: Pin 19
+- Row 2: Pin 18
+- Row 3: Pin 15
 
 #### Columns (Connected to `col-gpios`):
-- Column 0: Pin 2
+- Column 0: Pin 6
 - Column 1: Pin 7
-- Column 2: Pin 6
-- Column 3: Pin 5
-- Column 4: Pin 4
-- Column 5: Pin 3
+- Column 2: Pin 9
+- Column 3: Pin 8
+- Column 4: Pin 16
+- Column 5: Pin 14
 
 These pins are defined in the firmware and are configured for GPIO matrix scanning.
 
