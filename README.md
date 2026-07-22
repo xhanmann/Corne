@@ -87,7 +87,7 @@ To flash the firmware:
 3. Flash the appropriate firmware file
 
 If you forgot the keyboard from your device and can't reconnect:
-1. Flash the `settings_reset-nRFMicro-zmk.uf2` file
+1. Flash the `settings_reset-nrfmicro-zmk.uf2` file
 2. Reflash the regular firmware
 3. Pair
 
@@ -112,9 +112,9 @@ If you forgot the keyboard from your device and can't reconnect:
 │   ├── corne.keymap
 │   └── west.yml
 ├── firmware/
-│   ├── corne_left-nRFMicro-zmk.uf2
-│   ├── corne_right-nRFMicro-zmk.uf2
-│   └── settings_reset-nRFMicro-zmk.uf2
+│   ├── corne_left-nrfmicro-zmk.uf2
+│   ├── corne_right-nrfmicro-zmk.uf2
+│   └── settings_reset-nrfmicro-zmk.uf2
 └── zephyr/
     ├── module.yml
     └── build.yaml

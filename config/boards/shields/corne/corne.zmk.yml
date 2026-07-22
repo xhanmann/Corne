@@ -3,7 +3,7 @@ id: corne
 name: Corne
 type: shield
 url: https://github.com/foostan/crkbd/
-requires: [nRFMicro]
+requires: [nrfmicro]
 exposes: [i2c_oled]
 features:
   - keys
