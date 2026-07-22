@@ -19,9 +19,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: nrfmicro
     shield: corne_left
-  - board: nice_nano_v2
+  - board: nrfmicro
     shield: corne_right
   - board: nrfmicro
     shield: corne_left
