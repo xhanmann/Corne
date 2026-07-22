@@ -1,6 +1,6 @@
 # Budget Wireless Corne Keyboard Build
 
-A DIY wireless split keyboard based on the Corne layout, built for approximately $25 USD. This project uses a ProMicro clone with nrf52840 chip, making it a cost-effective alternative to traditional wireless split keyboard builds.
+A DIY wireless split keyboard based on the Corne layout, built for approximately $25 USD. This project uses a ProMicro clone with nrf52840 chip, making it a cost-effective alternative to traditional mechanical keyboards.
 
 ## Features
 - Fully wireless using Bluetooth
@@ -30,7 +30,7 @@ A DIY wireless split keyboard based on the Corne layout, built for approximately
 ![image](https://github.com/user-attachments/assets/3da97ceb-8e2a-43c5-a241-cf9ad4206688)
 ![image](https://github.com/user-attachments/assets/e262846d-57bf-43b6-b32c-b7e37d3ebb8c)
 ![image](https://github.com/user-attachments/assets/2a8999cc-e58c-4d51-a142-067cb7ca768c)
-![image](https://github.com/user-attachments/assets/06909fd8-bb4d-4956-88a1-f5d6a8b80e5f)
+![image](https://github.com/user-attachments/assets/06909fd8--bb4d-4956-88a1-f5d6a8b80e5f)
 
 ## Build Instructions
 
@@ -87,7 +87,7 @@ To flash the firmware:
 3. Flash the appropriate firmware file
 
 If you forgot the keyboard from your device and can't reconnect:
-1. Flash the `settings_reset-nice_nano_v2-zmk.uf2` file
+1. Flash the `settings_reset-nRFMicro-zmk.uf2` file
 2. Reflash the regular firmware
 3. Pair
 
@@ -112,9 +112,9 @@ If you forgot the keyboard from your device and can't reconnect:
 │   ├── corne.keymap
 │   └── west.yml
 ├── firmware/
-│   ├── corne_left-nice_nano_v2-zmk.uf2
-│   ├── corne_right-nice_nano_v2-zmk.uf2
-│   └── settings_reset-nice_nano_v2-zmk.uf2
+│   ├── corne_left-nRFMicro-zmk.uf2
+│   ├── corne_right-nRFMicro-zmk.uf2
+│   └── settings_reset-nRFMicro-zmk.uf2
 └── zephyr/
     ├── module.yml
     └── build.yaml
