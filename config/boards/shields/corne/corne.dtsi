@@ -75,8 +75,8 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>, /* */
-                    <NRF_PSEL(TWIM_SCL, 0, 3)>; /*  */
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>;
         };
     };
     i2c0_sleep: i2c0_sleep {
@@ -92,12 +92,12 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
     };
     spi3_default: spi3_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
         };
     };
     spi3_sleep: spi3_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
             low-power-enable;
             /* Pull MOSI down in sleep so the WS2812 data line is not left floating
              * and won't emit spurious data while the MCU is asleep.
@@ -117,14 +117,14 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
 
     /* SSD1306 OLED node (labelled &ssd1306 so chosen can reference it) */
     ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306"; /* Change to "sh1106" if using SH1106 */
-        reg = <0x3C>; /* I2C address of the OLED display */
+        compatible = "solomon,ssd1306";
+        reg = <0x3C>;
 
         status = "okay";
 
         /* Display properties */
-        width = <128>; /* Width of the display in pixels */
-        height = <32>; /* Height of the display in pixels */
+        width = <128>;
+        height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
@@ -145,11 +145,11 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,
         compatible = "worldsemi,ws2812-spi";
 
         /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
+        reg = <0>;
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <42>; /* number of LEDs */
+        chain-length = <42>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN
