@@ -19,13 +19,13 @@
 #
 ---
 include:
-  - board: nrfmicro/nrf52840
+  - board: nrfmicro/nrf52840/zmk
     shield: corne_left
-  - board: nrfmicro/nrf52840
+  - board: nnrfmicro/nrf52840/zmk
     shield: corne_right
-  - board: nrfmicro/nrf52840
+  - board: nrfmicro/nrf52840/zmk
     shield: corne_left
     artifact-name: corne_left-nrfmicro
-  - board: nrfmicro/nrf52840
+  - board: nnrfmicro/nrf52840/zmk
     shield: corne_right
     artifact-name: corne_right-nrfmicro
