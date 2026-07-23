@@ -26,6 +26,6 @@ include:
   - board: nrfmicro/nrf52840
     shield: corne_left
     artifact-name: corne_left-nrfmicro
-  - board: nnrfmicro/nrf52840
+  - board: nrfmicro/nrf52840
     shield: corne_right
     artifact-name: corne_right-nrfmicro
